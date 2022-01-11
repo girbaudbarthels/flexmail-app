@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:bloc/bloc.dart';
 import 'package:flexmail_app/core/data/flexmail_api.dart';
-import 'package:http/http.dart' as http;
 
 abstract class MyState {}
 
@@ -29,7 +26,6 @@ class LoginBLoC extends Bloc<MyEvent, MyState> {
   Future<void> isUserLoggedIn(UserLoggedInEvent event, Emitter emit) async {
     final status = await FlexmailApi.onInitApp();
     if (status == LoginStatus.loggedIn) {
-      print('hier');
       emit(UserLoggedInState());
     }
   }

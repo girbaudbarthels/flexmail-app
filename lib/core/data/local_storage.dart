@@ -17,7 +17,7 @@ class LocalData {
     try {
       await storage.setItem('basicAuth', basicAuth);
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 }

@@ -10,7 +10,9 @@ enum LoginStatus {
 
 class FlexmailApi {
   static Future<LoginStatus> getLoginStatus(
-      String username, String accesToken) async {
+    String username,
+    String accesToken,
+  ) async {
     final basicAuth =
         'Basic ${base64Encode(utf8.encode('$username:$accesToken'))}';
     final response = await http.get(
